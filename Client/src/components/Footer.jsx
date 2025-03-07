@@ -46,7 +46,7 @@ export default function FooterCom() {
                             Github
                         </Footer.Link>
                         <Footer.Link
-                        href='https://www.x.com/sarvajit_1'
+                        href='https://www.x.com/sarvaajitk'
                         target="_blank"
                         rel='noopener noreferrer'>
                             X

@@ -7,7 +7,7 @@ export default function Search() {
   const [sidebarData, setSidebarData] = useState({
     searchTerm: '',
     sort: 'desc',
-    category: 'uncategorized',
+    category: 'all',
   });
 
   console.log(sidebarData);
@@ -74,7 +74,14 @@ export default function Search() {
     const urlParams = new URLSearchParams(location.search);
     urlParams.set('searchTerm', sidebarData.searchTerm);
     urlParams.set('sort', sidebarData.sort);
-    urlParams.set('category', sidebarData.category);
+    
+    // Only set category if it's not 'all'
+    if (sidebarData.category !== 'all') {
+      urlParams.set('category', sidebarData.category);
+    } else {
+      urlParams.delete('category'); // Remove category parameter if 'all' is selected
+    }
+    
     const searchQuery = urlParams.toString();
     navigate(`/search?${searchQuery}`);
   };
@@ -125,19 +132,20 @@ export default function Search() {
           </div>
           <div className='flex items-center gap-2'>
             <label className='font-semibold'>Category:</label>
-            <Select
-              onChange={handleChange}
-              value={sidebarData.category}
-              id='category'
-            >
-              <option value='uncategorized'>Uncategorized</option>
-              <option value='machinelearning'>Machine Learning</option>
-              <option value='naturallanguageprocessing'>Natural Langauge Processing</option>
-              <option value='computervision'>Computer Vision</option>
-              <option value='deeplearning'>Deep Learning</option>
-              <option value='cognitivecomputing'>Congitive Computing</option>
-              <option value='neuralnetworks'>Neural Networks</option>
-            </Select>
+              <Select
+                onChange={handleChange}
+                value={sidebarData.category}
+                id='category'
+              >
+                <option value='all'>All</option>
+                <option value='uncategorized'>Uncategorized</option>
+                <option value='machinelearning'>Machine Learning</option>
+                <option value='naturallanguageprocessing'>Natural Langauge Processing</option>
+                <option value='computervision'>Computer Vision</option>
+                <option value='deeplearning'>Deep Learning</option>
+                <option value='cognitivecomputing'>Congitive Computing</option>
+                <option value='neuralnetworks'>Neural Networks</option>
+              </Select>
           </div>
           <Button type='submit' outline gradientDuoTone='purpleToPink'>
             Apply Filters

@@ -30,5 +30,172 @@ body{
     text-decoration: underline;
 }
 .dark .post-content a{
-    color:red
+    color:#60a5fa;
+}
+
+/* Improved transitions between light and dark modes */
+.dark .transition-theme,
+.transition-theme {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Better contrast for text in dark mode */
+.dark {
+  --text-primary: rgba(255, 255, 255, 0.92);
+  --text-secondary: rgba(255, 255, 255, 0.7);
+  --text-tertiary: rgba(255, 255, 255, 0.5);
+}
+
+/* Force black background on all common dark mode components */
+.dark .bg-gray-900,
+.dark .bg-gray-800,
+.dark .bg-gray-700,
+.dark [class*="dark:bg-gray-"] {
+  background-color: #000000 !important;
+}
+
+/* Card and container styling for dark mode */
+.dark .card,
+.dark .container-custom {
+  background-color: #000000;
+  border-color: #333;
+}
+
+/* Navbar specific styling for dark mode */
+.dark header,
+.dark nav,
+.dark .navbar {
+  background-color: #000000;
+  border-bottom: 1px solid #333;
+}
+
+/* Button styling for dark mode */
+.dark .btn-primary {
+  background-color: #2563eb;
+  color: white;
+}
+
+/* Accent color for highlights */
+.dark .accent {
+  color: #60a5fa;
+}
+
+/* Better form element styling for dark mode */
+.dark input,
+.dark textarea,
+.dark select {
+  background-color: #121212;
+  border-color: #333;
+  color: var(--text-primary);
+}
+
+/* Dropdown and menu styling */
+.dark .dropdown-menu,
+.dark .menu {
+  background-color: #000000;
+  border-color: #333;
+}
+
+/* Enhanced dark mode styling */
+.dark {
+  --bg-primary: #000000;
+  --bg-secondary: #0a0a0a;
+  --bg-tertiary: #121212;
+  --border-color: #333333;
+  --highlight-color: #1f1f1f;
+  --text-primary: rgba(255, 255, 255, 0.92);
+  --text-secondary: rgba(255, 255, 255, 0.7);
+  --text-tertiary: rgba(255, 255, 255, 0.5);
+}
+
+/* Main background - pure black */
+.dark body,
+.dark .bg-gray-900,
+.dark .bg-gray-800,
+.dark .bg-gray-700,
+.dark [class*="dark:bg-gray-"],
+.dark .bg-white,
+.dark [class*="dark:bg-white"] {
+  background-color: var(--bg-primary) !important;
+}
+
+/* Component backgrounds - slightly lighter for visual distinction */
+.dark .card,
+.dark .container-custom,
+.dark .dropdown-menu,
+.dark .menu,
+.dark .sidebar,
+.dark aside,
+.dark .modal,
+.dark .dialog {
+  background-color: var(--bg-secondary) !important;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+/* Form elements and inputs - tertiary background */
+.dark input,
+.dark textarea,
+.dark select,
+.dark .input-field {
+  background-color: var(--bg-tertiary) !important;
+  border-color: var(--border-color) !important;
+  color: var(--text-primary);
+}
+
+/* Hover states for better interaction feedback */
+.dark .hover-element:hover,
+.dark button:hover:not(.disabled),
+.dark [role="button"]:hover,
+.dark a:hover {
+  background-color: var(--highlight-color);
+}
+
+/* Navbar with subtle border for separation */
+.dark header,
+.dark nav,
+.dark .navbar,
+.dark [class*="navbar"] {
+  background-color: var(--bg-primary) !important;
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* Footer styling */
+.dark footer {
+  background-color: var(--bg-primary) !important;
+  border-top: 1px solid var(--border-color);
+}
+
+/* Table styling for better readability */
+.dark table,
+.dark tbody,
+.dark tr {
+  background-color: var(--bg-primary) !important;
+}
+
+.dark th,
+.dark td {
+  border-color: var(--border-color) !important;
+}
+
+.dark tr:nth-child(even) {
+  background-color: var(--bg-secondary) !important;
+}
+
+/* Button styling for better visibility */
+.dark button,
+.dark .btn {
+  background-color: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+}
+
+.dark .btn-primary {
+  background-color: #2563eb !important;
+  color: white;
+}
+
+/* Specific overrides for Flowbite components */
+.dark [class*="flowbite-"] {
+  --tw-bg-opacity: 1;
+  background-color: var(--bg-primary) !important;
 }
